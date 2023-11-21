@@ -1,0 +1,64 @@
+from datetime import date, timedelta, datetime
+import time
+from pathlib import Path
+caminho = Path('C:/Users/marce/OneDrive/Área de Trabalho')
+
+tipoRegistro = linha[:3]
+versaoRegistro = linha[3:6]
+codEmpresa = linha[6:9]
+numOnibus = linha[14:19]
+estServico = linha[19:22]
+data = linha[22:27]
+hora = linha[27:32]
+codEmpMotorista = linha[32:35]
+codMotProdata = linha[35:45]
+matricMotorista = linha[45:55]
+codEmpCobrador = linha[55:58]
+codProdCobrador = linha[58:68]
+matricCobrador = linha[68:78]
+codLinhaDetalhe = linha[78:82]
+codLinhaPrincipal = linha[82:88]
+codSecao = linha[88:91]
+sentido = linha[91:94]
+turno = linha[94:95]
+assinatura = linha[95:100]
+
+
+estadoServico = {'001': 'Fechado', 
+                 '002': 'Liberado', 
+                 '003': 'Ocioso',
+                 '004': 'Placa',
+                 '005': 'Comercial'}
+
+empresas = {'006': 'Flores',
+            '010': 'Real Rio',
+            '017': 'Rio dOuro',
+            '025': 'Mageli',
+            '027': 'Beira Mar'}
+
+def converte_juliana_bil002(data):
+    curr_date = "31/12/2002"
+    curr_date_temp = datetime.strptime(curr_date, "%d/%m/%Y")
+    new_date = curr_date_temp + timedelta(days=int(data))
+    format_date = new_date.strftime("%d/%m/%Y")
+    return format_date
+
+def convert_hora(hora):
+    return time.strftime("%H:%M:%S", time.gmtime(int(hora)))
+
+
+
+f = open(caminho/'TG006.txt', 'r')
+conteudo = f.readlines()
+for linha in conteudo:
+    if linha[0:3] == '001':
+        print("Data = " + converte_juliana_bil002(data))
+       # print("Empresa = " + empresas[codEmpresa])
+        print("Estado do Serviço = " + estadoServico[estServico])
+        print("Hora = " + convert_hora(hora))
+        print("Numero do onibus = " + numOnibus)
+        print("Matricula do motorista = " + matricMotorista)
+        print("Codigo Motorista Prodata = " + codMotProdata)
+        print("Turno = " + turno)
+        print("Sentido = " + sentido)
+        linha = linha + 1

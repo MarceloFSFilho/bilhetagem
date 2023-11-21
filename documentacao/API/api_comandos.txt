@@ -1,0 +1,26 @@
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IndhZ25lciIsImlhdCI6MTY0NDMyMTgxNn0.CIoUk_QClGmQMTlihRS7JVuwlmTiC2aARD95ueTfnKc
+
+
+
+http://vps8069.publiccloud.com.br:4444/prodata/api/v1.0/passengertotalbyviagembycarrobyperiodo/28181/20220608000000/20220608235900
+http://vps8069.publiccloud.com.br:4444/prodata/api/v1.0/passengertotalbycarrobyperiodo/
+<id_carro>/<data_inicial>/<data_final>
+
+http://vps8069.publiccloud.com.br:4444/prodata/api/v1.0/passengerdetalhebycarrobyperiodo/28181/20220608000000/20220608235900
+
+import requests
+import json
+response = requests.get('http://vps8069.publiccloud.com.br:4444/prodata/api/v1.0/passengerdetalhebycarrobyperiodo/28181/20220608000000/20220608235900', headers={ 'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IndhZ25lciIsImlhdCI6MTY0NDMyMTgxNn0.CIoUk_QClGmQMTlihRS7JVuwlmTiC2aARD95ueTfnKc'})
+regs = json.loads(response.content)
+for row in regs:
+    print(row)
+	
+	
+	
+
+import requests
+import json
+response = requests.get('http://vps8069.publiccloud.com.br:4444/prodata/api/v1.0/passengertotalbyviagembycarrobyperiodo/28181/20220608000000/20220608235900', headers={ 'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IndhZ25lciIsImlhdCI6MTY0NDMyMTgxNn0.CIoUk_QClGmQMTlihRS7JVuwlmTiC2aARD95ueTfnKc'})
+regs = json.loads(response.content)
+for row in regs:
+    print(row)	

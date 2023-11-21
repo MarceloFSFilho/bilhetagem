@@ -1,0 +1,47 @@
+001 001 006 0000028018 003 07596 51686 006 0000078454 0000041118 006 0000078454 0000041118 00161 07161 001 000 2 0000
+0-2 * 001 * tipo registro
+3-5 * 001 * versao registro
+6-8 * 006 * codigo empresa
+9-18 * 0000028018 * numero onibus
+19-21 * 003 * estado servico
+22-26 * 07596 * data (juliana)
+27-31 * 51686 * hora(segundo)
+32-34 * 006 * codigo empresa motorista
+35 - 44 * 0000078454 * mot codigo prodata
+45 - 54 * 0000041118 * matricula motorista
+55 - 57 * 006 * cod empresa cobrado
+58 - 67 * 0000078454 * cod prodata cobrador
+68 - 77 * 0000041118 * matricula cobrador
+78 - 82 * 00161 * codigo linha detalhe
+83 - 87 * 07161 * codigo linha principal
+88 - 90 * 001 * codigo secao
+91 - 93 * 000 * sentido
+94 - 95 * 2 * turno
+96 - 99 * 0000 * assinatura
+
+
+estadoServico = [1, fechado], [2, liberado], [3, ocioso], [4, placa], [5, comercial]
+empresas = [006, flores], [010; 'real rio' ]
+
+string de testes 
+001001006000002801800107596804360000000078454000000000000000000000000000000000001610716100100120000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
