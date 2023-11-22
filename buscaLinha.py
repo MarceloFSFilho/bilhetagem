@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[113]:
+# In[ ]:
 
 
 def busca_linha(linha):
@@ -114,17 +114,12 @@ def busca_linha(linha):
         678: '167013',
         700: '128042', 
         715: '171003'}
-    return dados_linhas[linha]
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
+    
+    if not linha in dados_linhas:
+        return str('99999')
+    
+    else:
+        return dados_linhas[linha]
 
 
 
